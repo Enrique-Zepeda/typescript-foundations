@@ -10,5 +10,5 @@
     return 1;
   };
 
-  error("Error");
+  // error("Error");
 })();

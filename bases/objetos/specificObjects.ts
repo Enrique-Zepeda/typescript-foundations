@@ -31,5 +31,5 @@
   };
 
   // Se imprime el resultado del método `getName`
-  console.log(flash.getName());
+  console.log(flash.getName?.());
 })();
