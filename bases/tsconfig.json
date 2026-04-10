@@ -45,8 +45,6 @@
     // "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "exclude": ["node_modules2"]
-  // "include": [
-  //   "node_modules"
-  // ]
+  "exclude": ["node_modules2"],
+  "include": ["ES6"]
 }
