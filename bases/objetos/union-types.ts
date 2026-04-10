@@ -1,8 +1,6 @@
 (() => {
-  //* Los union types permiten que una variable pueda tener más de un tipo de dato usando el operador `|`
-
-  // Definimos un tipo llamado `Hero`
-  // para describir la estructura que debe tener un héroe
+  // Los union types permiten que una variable pueda almacenar más de un tipo de dato
+  // usando el operador `|`
   type Hero = {
     name: string;
     age?: number;
@@ -10,18 +8,17 @@
     getName?: () => string;
   };
 
-  // `myCustomVariable` puede almacenar distintos tipos de datos:
+  // `myCustomVariable` puede ser:
   // - string
   // - number
   // - Hero
-  // Eso es un union type: usar `|`
   let myCustomVariable: string | number | Hero = "Kike";
 
-  // Aquí guarda un string
+  // Aquí la variable guarda un string
   console.log(myCustomVariable);
   console.log(typeof myCustomVariable); // string
 
-  // Ahora la misma variable guarda un number
+  // Ahora guarda un number
   myCustomVariable = 20;
   console.log(typeof myCustomVariable); // number
 
@@ -32,6 +29,6 @@
     powers: [1],
   };
 
-  // En JavaScript, los objetos regresan "object" con typeof
+  // En JavaScript, `typeof` para objetos devuelve "object"
   console.log(typeof myCustomVariable); // object
 })();
