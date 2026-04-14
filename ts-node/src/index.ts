@@ -1,15 +1,18 @@
-import { getPokemons } from "./generics/get-pokemons";
+import { Pokemon } from "./decorators/pokemon-class";
 
-// También podríamos imprimir todo el objeto completo
-// console.log(getPokemons(4));
+// Creamos una nueva instancia de la clase `Pokemon`
+const charmander = new Pokemon("Charmander");
 
-// `getPokemons(4)` retorna una promesa.
-// Cuando se resuelve, recibimos un objeto de tipo `Pokemon`
-getPokemons(4)
-  .then((pokemon) => {
-    // Gracias al tipado, TypeScript ya reconoce
-    // las propiedades disponibles del objeto `pokemon`
-    console.log(pokemon.sprites.front_default);
-  })
-  .catch((error) => console.log(error))
-  .finally(() => console.log("Fin de getPokemons"));
+// Esto daría error porque el prototipo fue sellado con `Object.seal()`
+// y ya no se le pueden agregar nuevas propiedades
+// (Pokemon.prototype as any).customName = "Pikachu";
+
+console.log(charmander);
+
+// Aquí se ejecuta el decorador del método,
+// que valida si el id está en el rango permitido
+charmander.savePokemonToDB(-50);
+charmander.savePokemonToDB(3);
+
+// Aquí se intenta cambiar la propiedad decorada `publicApi`
+charmander.publicApi = "http:kike.com";
